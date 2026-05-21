@@ -17,6 +17,7 @@ Use this skill after slices have 2D coordinates plus slice order, or after regis
 ## Default Requirements
 
 - Use the SPACEL/Scube-backed scripts in `scripts/` first. Do not replace them with a low-dependency matplotlib-only implementation unless the user explicitly asks.
+- Default deliverables are standalone figure files: PNG/PDF static snapshots, PNG/PDF contact sheets, GIF rotation animations, and JSON/TSV provenance. Do not generate `index.html`, Plotly HTML, Streamlit/Dash apps, browser galleries, or other webpage deliverables unless the user explicitly asks for interactive HTML.
 - Run in the dedicated environment: `conda run -n stereo-skills-py-spacel3d python ...`. Create it with this skill's bundled `envs/install-python-spacel3d.sh`. This environment installs SPACEL source files and pinned plotting/h5ad dependencies for visualization; it is not intended as the full SPACEL training/GPR environment.
 - If `SPACEL` or snapshot/GIF dependencies are missing, stop the blocked step and report the missing package and environment file. Do not silently install packages into `stereo-skills-py`.
 - Use this skill's bundled `envs/install-python-spacel3d-mesh.sh` only when a task specifically needs Open3D mesh or surface utilities from `SPACEL/Scube/utils_3d.py`.
@@ -50,7 +51,8 @@ Use this skill after slices have 2D coordinates plus slice order, or after regis
 ## Output Expectations
 
 - PNG/PDF static snapshots for requested camera angles.
-- Optional multi-angle contact sheet PNG/PDF.
+- Optional multi-angle contact sheet as one standalone PNG/PDF figure, not an HTML page.
 - Optional rotation GIF.
 - Optional single-slice black-background PNG/PDF panels.
 - A small parameters/provenance TSV or JSON recording input columns, slice spacing, camera angles, downsampling, point size, palette, tool versions, and paper/code provenance.
+- No webpage output by default. HTML is an opt-in interactive supplement only when explicitly requested.

@@ -12,10 +12,12 @@ Use this checklist for 3D ST figure requests.
 ## Standard Outputs
 
 - `*_view_elev*_azim*.png`: one static view per camera angle.
-- `*_contact_sheet.png`: multi-angle contact sheet when more than one view is requested.
+- `*_contact_sheet.png`: multi-angle contact sheet as a single standalone image when more than one view is requested.
 - `*_rotation.gif`: optional animation when requested.
 - `*_single_slice_*.png`: optional black-background 2D slice panels.
 - `*_provenance.json`: parameters, tool versions, input columns, and source-code provenance.
+
+Do not create `index.html`, Plotly HTML, Streamlit/Dash apps, or browser galleries by default. Only produce HTML when the user explicitly asks for an interactive HTML deliverable.
 
 ## View Presets
 
