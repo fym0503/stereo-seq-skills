@@ -43,6 +43,7 @@ Restart Codex after installation so the new skills are discovered.
 - `stereo-seq-spatial-grn-regulon`
 - `stereo-seq-developmental-trajectory`
 - `stereo-seq-3d-reconstruction`
+- `stereo-seq-3d-visualization`
 
 ## Publication Story Corpus
 
@@ -61,3 +62,15 @@ The skill uses these local references to help Codex identify similar published S
 These skills describe workflows and include reusable scripts/templates, but they do not install Python or R packages automatically. If a workflow needs unavailable packages, Codex should report the missing packages and ask the user to install or activate a suitable environment.
 
 Typical analysis environments may need packages such as `scanpy`, `anndata`, `squidpy`, `stereopy`, `GraphST`, `pyscenic`, `CellChat`, `Seurat`, or related method-specific dependencies depending on the requested workflow.
+
+The `stereo-seq-3d-visualization` skill includes a dedicated SPACEL/Scube plotting environment:
+
+```bash
+bash stereo-seq-3d-visualization/envs/install-python-spacel3d.sh
+```
+
+For optional Open3D mesh/surface utilities, use:
+
+```bash
+bash stereo-seq-3d-visualization/envs/install-python-spacel3d-mesh.sh
+```

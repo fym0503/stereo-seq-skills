@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq 3D Visualization"
+  short_description: "Render dark 3D ST snapshots, contact sheets, GIFs, and slice maps"
+  default_prompt: "Use $stereo-seq-3d-visualization to create black-background 3D Stereo-seq snapshots, contact sheets, rotation GIFs, and single-slice maps using SPACEL/Scube-backed scripts."
+policy:
+  allow_implicit_invocation: true
