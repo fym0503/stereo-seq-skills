@@ -33,6 +33,7 @@ description: Use when Stereo-seq or STOmics data needs QC, preprocessing, GEM/GE
 
 - `scripts/endo_stereopy_qc_preprocessing_template.py`: adapted from Endo.R StereoPy binning/QC for GEF-to-h5ad preprocessing.
 - `scripts/gf_gem_to_seurat_qc_template.R`: adapted from GF/SPF cecum GEM-to-Seurat and spatial QC plotting.
+- `scripts/h5ad_spatial_qc_overview_template.py`: adapted from Endo.R, human cortex, and GF/SPF cecum QC/stat plotting patterns for h5ad count/feature/spatial overview figures.
 
 ## Output Expectations
 

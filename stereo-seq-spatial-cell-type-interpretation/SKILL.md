@@ -44,6 +44,7 @@ Do not use this skill to choose or run deconvolution; use `stereo-seq-cell-type-
 
 - `scripts/p09_target_cell_location.py`: adapted from P09 Zenodo `5_location_Tau.py`, `case_tau_location.py`, and `control_tau_location.py` for red/grey target-cell spatial localization plots.
 - `scripts/gf_cecum_celltype_proportion_template.R`: adapted from GF/SPF cecum `Single_cell.R` for condition-wise cell-type proportion plots after mapping.
+- `scripts/spatial_celltype_enrichment_template.py`: adapted from P09, human cortex, and avian optic tectum interpretation patterns for domain-by-cell-type enrichment tables and heatmaps.
 
 When using any bundled script, tell the user which paper and original source file it came from; use [source_code.md](references/source_code.md) for DOI and repository details.
 

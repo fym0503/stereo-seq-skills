@@ -30,6 +30,7 @@ description: Use when Stereo-seq or STOmics data needs cell-cell interaction, CC
    - `../stereo-seq-spatial-communication/scripts/zebrafish_spatial_cellchat_template.R` for spatial CellChat with coordinates.
    - `scripts/spider_spatial_lri_template.py` for SPIDER spatially variable ligand-receptor interactions.
    - `scripts/stmlnet_multilayer_cci_template.R` for stMLnet multilayer ligand-receptor-TF-target CCI with signal activity and importance.
+   - `scripts/spatial_lr_neighbor_filter_template.py` for lightweight ligand-receptor support filtering by coordinate-neighbor adjacency before heavier CCI modeling.
 3. Choose the template by comparing available inputs, spatial constraint, and paper-code similarity. Treat source-code/evidence files as context for LLM judgement, not as fixed tool-selection rules.
 4. Validate interactions with spatial proximity, expression support, pathway context, and condition/domain specificity.
 5. Report CCI results as hypotheses unless supported by spatial adjacency and orthogonal biology.

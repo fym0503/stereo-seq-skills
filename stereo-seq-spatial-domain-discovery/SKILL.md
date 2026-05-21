@@ -37,6 +37,7 @@ description: Use when Stereo-seq data needs tissue domain, layer, anatomical reg
 - `scripts/zebrafish_harmony_domain_template.R`: adapted from zebrafish heart regeneration `02. Stereo-seq clustering/01.cluster.R` for multi-slice Seurat/Harmony clustering and spatial cluster plots.
 - `scripts/graphst_domain_template.py`: adapted from GraphST `GraphST/GraphST.py` and `GraphST/utils.py` for spatial graph representation learning and domain plotting.
 - `scripts/gf_bayesspace_domain_template.R`: adapted from GF/SPF cecum `Spatial transcriptome.R` for BayesSpace spatial clustering and publication-ready cluster maps.
+- `scripts/scanpy_spatial_domain_marker_template.py`: adapted from P09, Endo.R, and human cortex domain workflows for lightweight h5ad Leiden/domain labels, marker table, spatial map, and marker heatmap.
 
 When using any bundled script, tell the user which paper and original source file it came from; use [source_code.md](references/source_code.md) for DOI and repository details.
 

@@ -34,6 +34,8 @@ description: Use when Stereo-seq or STOmics analysis needs paper-quality figures
 
 - `scripts/stereo_spatial_panel_template.py`: categorical/continuous spatial-map template adapted from P09 layer maps, Endo.R spatial scatter patterns, and GF/SPF cecum marker spatial maps.
 - `scripts/stereo_dotplot_template.R`: marker/program dotplot template adapted from Endo.R marker dotplots and GF/SPF cecum function dotplots.
+- `scripts/stereo_marker_spatial_grid_template.py`: marker spatial grid template adapted from P09, Endo.R, and avian optic tectum marker-map figures.
+- `scripts/stereo_marker_heatmap_template.R`: marker/program heatmap template adapted from SpaSEG, human cortex, and GF/SPF cecum heatmap-style figure patterns.
 
 When a plot requires a more specialized analysis output, use this skill together with the relevant analysis skill and still preserve the publication-figure requirements here.
 

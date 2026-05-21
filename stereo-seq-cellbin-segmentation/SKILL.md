@@ -43,6 +43,7 @@ For expression-only QC after a cellbin object already exists, use `stereo-seq-qu
 ## Reusable Article Code
 
 - `scripts/cellbin_mask_qc_template.py`: lightweight QC and figure template derived from public STCellbin/BIDCell/ascidian cell-segmentation patterns for segmentation summary, mask overlay, and coordinate scatter checks.
+- `scripts/cellbin_boundary_overlay_template.py`: boundary/expression overlay template derived from Thor, BIDCell/CellSPA, and ascidian endostyle cellbin geometry plotting patterns.
 
 When using this or any external method-specific command, tell the user which paper and original source file it came from; use [source_code.md](references/source_code.md) for DOI and repository details.
 

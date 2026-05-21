@@ -45,6 +45,7 @@ For a task that explicitly says CCI, cell-cell interaction, ligand-receptor, STc
 - `scripts/zebrafish_spatial_cellchat_template.R`: adapted from zebrafish heart regeneration `07. CellChat analysis/02.CellChat2_Stereoseq.R` for spatial CellChat with coordinates and distance constraints.
 - `../stereo-seq-cell-cell-interaction/scripts/stcomm_colocalized_lr_template.R`: adapted from STcomm mouse organogenesis code for deconvolution-weight colocalization plus LR filtering.
 - `../stereo-seq-cell-cell-interaction/scripts/spider_spatial_lri_template.py`: adapted from SPIDER for spatially variable ligand-receptor interactions with downstream TF support.
+- `scripts/spatial_lr_neighbor_filter_template.py`: adapted from STcomm, SPIDER, and P09 spatial CCI patterns for lightweight ligand-receptor support filtering by coordinate-neighbor adjacency.
 
 When using any bundled script, tell the user which paper and original source file it came from; use [source_code.md](references/source_code.md) for DOI and repository details.
 

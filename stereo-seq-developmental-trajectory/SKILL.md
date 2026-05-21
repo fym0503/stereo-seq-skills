@@ -27,6 +27,7 @@ description: Use when Stereo-seq or STOmics data needs developmental, regenerati
    - `scripts/zebrafish_tome_sankey_template.R` for stage-to-stage Sankey flow plots.
    - `scripts/spatrack_spatial_trajectory_template.py` for spatial optimal-transport pseudotime/trajectory streams.
    - `scripts/ontrac_stereo_niche_trajectory_template.py` for ONTraC Stereo-seq niche trajectory CLI runs.
+   - `scripts/spatial_pseudotime_plot_template.py` for spaTrack/ONTraC/trajectory-projection-style plotting when pseudotime or state scores already exist.
 3. Let task similarity, available inputs, and paper-code provenance guide the choice; do not encode tissue-specific tool rules.
 4. Preserve the input-output contract in the adapted script: cell/bin IDs, coordinates/embedding, stage labels, cell states, and output paths.
 5. Validate that trajectory direction is supported by time, known markers, RNA velocity confidence, explicit start cells, or transition weights.

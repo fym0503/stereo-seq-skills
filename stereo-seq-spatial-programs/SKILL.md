@@ -40,6 +40,7 @@ description: Use when analyzing Stereo-seq spatial gene programs, including spat
 - `scripts/p09_hdwgcna_skeleton.R`: adapted from P09 Zenodo `9_Spatial_coexpression.R` for Seurat + hdWGCNA spatial co-expression modules.
 - `scripts/gf_cecum_deg_volcano_template.R`: adapted from GF/SPF cecum `Single_cell.R` DEG sections for publication-style volcano plots.
 - `scripts/gf_cecum_go_gsea_dotplot_template.R`: adapted from GF/SPF cecum `Single_cell.R` enrichment sections for GO/GSEA dotplots.
+- `scripts/spatial_variable_gene_scanpy_template.py`: adapted from SVGbench, PROST, and SpaSEG SVG/spatial-program patterns for Squidpy Moran's I ranking plus top-gene spatial maps.
 
 When using any bundled script, tell the user which paper and original source file it came from; use [source_code.md](references/source_code.md) for DOI and repository details.
 

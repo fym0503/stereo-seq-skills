@@ -25,6 +25,7 @@ description: Use when Stereo-seq or STOmics serial sections need multi-slice reg
 2. Read [source_code.md](references/source_code.md), then adapt the closest local script:
    - `scripts/zebrafish_tps_slice_registration_template.py` for mask/anchor-based TPS coordinate mapping and QC plots.
    - `scripts/spatialign_multislice_alignment_template.py` for spatiAlign-style multi-slice spatial alignment when that package is installed.
+   - `scripts/multislice_spatial_qc_template.py` for SLAT/SPACEL-style multi-slice coordinate QC panels and 3D-ready stacked previews before or after registration.
 3. Export transformed coordinates and a registration QC plot for every slice pair or atlas mapping.
 4. Validate registration with landmarks, tissue contours, known anatomical layers, and non-overlap of impossible tissue regions.
 5. Keep biological interpretation separate from registration quality.
