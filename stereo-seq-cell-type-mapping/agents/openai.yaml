@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Cell Type Mapping"
+  short_description: "Map Stereo-seq bins or cellbins to cell types"
+  default_prompt: "Use $stereo-seq-cell-type-mapping to choose and justify a cell-type mapping workflow for this Stereo-seq dataset."
+policy:
+  allow_implicit_invocation: true

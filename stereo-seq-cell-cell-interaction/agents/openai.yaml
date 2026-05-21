@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq CCI"
+  short_description: "Analyze spatial cell-cell interactions and ligand-receptor signals"
+  default_prompt: "Use $stereo-seq-cell-cell-interaction to infer or visualize spatially constrained cell-cell interactions in this Stereo-seq dataset."
+policy:
+  allow_implicit_invocation: true

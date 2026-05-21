@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local analysis outputs should not be committed to this installable skill bundle.
+skill_test_output/
+outputs/
+results/
+tmp/

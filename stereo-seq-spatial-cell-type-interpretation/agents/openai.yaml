@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Cell-Type Interpretation"
+  short_description: "Interpret mapped cell types in tissue space"
+  default_prompt: "Use $stereo-seq-spatial-cell-type-interpretation to interpret the spatial distribution of mapped cell types in this Stereo-seq analysis."
+policy:
+  allow_implicit_invocation: true

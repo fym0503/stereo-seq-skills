@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq QC Preprocessing"
+  short_description: "QC and preprocess Stereo-seq GEM/GEF data"
+  default_prompt: "Use $stereo-seq-quality-control-preprocessing to QC and preprocess this Stereo-seq dataset with bundled article-derived code."
+policy:
+  allow_implicit_invocation: true

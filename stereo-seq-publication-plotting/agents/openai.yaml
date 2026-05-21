@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Publication Plotting"
+  short_description: "Make paper-quality Stereo-seq figures from article templates"
+  default_prompt: "Use $stereo-seq-publication-plotting to make manuscript-ready Stereo-seq figures by adapting bundled article-derived plotting code."
+policy:
+  allow_implicit_invocation: true

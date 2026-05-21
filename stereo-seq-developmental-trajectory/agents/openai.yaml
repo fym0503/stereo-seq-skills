@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Trajectory"
+  short_description: "Analyze Stereo-seq temporal, velocity, and lineage trajectories"
+  default_prompt: "Use $stereo-seq-developmental-trajectory to analyze developmental or temporal trajectories in this Stereo-seq dataset."
+policy:
+  allow_implicit_invocation: true

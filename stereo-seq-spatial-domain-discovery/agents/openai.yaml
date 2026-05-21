@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Spatial Domains"
+  short_description: "Discover and validate Stereo-seq tissue domains"
+  default_prompt: "Use $stereo-seq-spatial-domain-discovery to identify and validate spatial domains in this Stereo-seq dataset."
+policy:
+  allow_implicit_invocation: true

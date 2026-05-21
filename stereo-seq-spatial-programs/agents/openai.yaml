@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Spatial Programs"
+  short_description: "Choose methods for spatial gene programs"
+  default_prompt: "Use $stereo-seq-spatial-programs to choose and justify a spatial gene-program analysis for this Stereo-seq dataset."
+policy:
+  allow_implicit_invocation: true

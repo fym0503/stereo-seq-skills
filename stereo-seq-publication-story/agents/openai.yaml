@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq Publication Story"
+  short_description: "Reuse real Stereo-seq paper story templates with DOI/source provenance"
+  default_prompt: "Use $stereo-seq-publication-story to search bundled real Stereo-seq paper digests/story templates, design a dataset-specific publication story, and report reused papers, DOI, code/data source, and adaptations."
+policy:
+  allow_implicit_invocation: true

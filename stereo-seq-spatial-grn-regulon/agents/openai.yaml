@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stereo-seq GRN Regulon"
+  short_description: "Infer and plot spatial TF regulons in Stereo-seq data"
+  default_prompt: "Use $stereo-seq-spatial-grn-regulon to infer or visualize spatial GRNs, TF regulons, and regulon activity in this Stereo-seq dataset."
+policy:
+  allow_implicit_invocation: true
