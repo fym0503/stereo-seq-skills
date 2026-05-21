@@ -103,3 +103,76 @@ Reusable success points:
 - Select markers from the reference and explicitly intersect genes before mapping.
 - Export `tangram_ct_pred` as a probability table for downstream interpretation.
 - Keep runtime and marker count as audit metadata.
+
+## Human Cortex Single-Cell Resolution Atlas
+
+- Paper: `Charting the spatial transcriptome of the human cerebral cortex at single-cell resolution`
+- DOI: `10.1038/s41467-025-62793-9`
+- Code repository: `https://github.com/lcy1364/Cortex-Atlas-Code`
+
+Reusable files:
+
+- `src/STEREO/2_Deconvolution_and_QC/1_Initial_deconvolution.R`: first-pass deconvolution.
+- `src/STEREO/2_Deconvolution_and_QC/2_second_subclass_deconvolution.R`: subclass-level mapping refinement.
+- `src/STEREO/2_Deconvolution_and_QC/3_RCTD_resumeMICROandOPC.R`: RCTD reruns for specific populations.
+- `src/STEREO/2_Deconvolution_and_QC/4_spatialCellMeta.R`: spatial metadata and validation plots.
+
+Reusable success points:
+
+- Use multi-pass mapping only when the reference supports subclass resolution.
+- Keep broad class, subclass, and uncertainty outputs separate.
+- Validate mapped cell types with markers and spatial layer/domain context.
+
+## Avian Optic Tectum Cross-Reference Mapping
+
+- Paper: `Spatial and single-nucleus transcriptomics decoding the molecular landscape and cellular organization of avian optic tectum`
+- DOI: `10.1016/j.isci.2024.109009`
+- Code repository: `https://github.com/Coleliao/Spatial_OT`
+
+Reusable files:
+
+- `spatial_analysis/fig1E_integrate_spatial_sections_bin100.R`: spatial section integration.
+- `spatial_analysis/fig3BCDE_cellbin_clustering.R`: cellbin clustering after segmentation.
+- `snRNA_analysis/fig4D_birds_mouse_correlation.R`: cross-species/cross-reference correlation.
+- `snRNA_analysis/fig4AB_single_nucleus_dOT_clustering.R`: reference clustering.
+
+Reusable success points:
+
+- Keep reference clustering and spatial assignment outputs auditable.
+- Use correlation/orthology evidence when transferring labels across species.
+- Validate spatial labels using marker genes and cellbin/bin resolution.
+
+## SpatialID And stTransfer Evidence
+
+- stTransfer paper: `stTransfer enables transfer of single-cell annotations to spatial transcriptomics with single-cell resolution`
+- DOI: `10.1016/j.crmeth.2025.101205`
+- Code repository: `https://github.com/STOmics/SpatialID`
+- Benchmark evidence: `Benchmarking mapping algorithms for cell-type annotating in mouse brain by integrating single-nucleus RNA-seq and Stereo-seq data`, DOI `10.1093/bib/bbae250`
+
+Reusable files:
+
+- `spatialid/reader.py`, `spatialid/spatial.py`, `spatialid/trainer.py`, `spatialid/transfer.py`: SpatialID/stTransfer workflow components.
+- `Code in python/spatialID.ipynb`: benchmark mapping example.
+
+Reusable success points:
+
+- Use when single-cell resolution or near-cellbin annotation transfer is the explicit goal.
+- Export probabilities/scores rather than only hard labels.
+- Compare with marker validation or a second mapping method when labels drive the main claim.
+
+## Wheat Root Cross-Species Annotation Transfer
+
+- Paper: `A single-cell and spatial wheat root atlas with cross-species annotations delineates conserved tissue-specific marker genes and regulators`
+- DOI: `10.1016/j.celrep.2025.115240`
+- Code repositories: `https://github.com/VIB-PSB/wheat_root_atlas`, `https://github.com/VIB-PSB/cross_species_annotation_transfer`
+
+Reusable files:
+
+- `annotation_transfer_analysis.py`: cross-species annotation transfer workflow.
+- `bin/significance_deg_overlap.py`: DEG overlap significance testing.
+
+Reusable success points:
+
+- Require explicit ortholog mapping and gene-overlap statistics.
+- Report transfer uncertainty when marker conservation is incomplete.
+- Use cross-species mapping as a hypothesis generator unless independently validated.

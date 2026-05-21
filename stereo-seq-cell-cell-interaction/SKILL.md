@@ -14,6 +14,7 @@ description: Use when Stereo-seq or STOmics data needs cell-cell interaction, CC
 ## Default Requirements
 
 - Use bundled article-derived scripts in `scripts/` before writing new code or searching external repositories.
+- Read [source_code.md](references/source_code.md) first for curated CCI templates; if no curated entry fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked repositories and reusable files.
 - Inspect local Python/R environments first. Prefer `conda run -n stereo-skills-py python ...` for Python scripts and `conda run -n stereo-skills-r Rscript ...` for R scripts. SPIDER requires its own env (`envs/environment-python-spider.yml`) if the `spider` module is missing. If a required package is missing, stop that step and tell the user which CCI step is blocked.
 - Always define upstream labels and spatial constraint before interpreting interactions.
 - Keep CCI plots paper-ready: Arial, readable network/heatmap labels, no legend overlap, and vector PDF where possible.

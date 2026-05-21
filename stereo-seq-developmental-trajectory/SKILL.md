@@ -14,6 +14,7 @@ description: Use when Stereo-seq or STOmics data needs developmental, regenerati
 ## Default Requirements
 
 - Use bundled article-derived scripts in `scripts/` before writing new code or searching GitHub/Zenodo.
+- Read [source_code.md](references/source_code.md) first for curated trajectory templates; if no curated entry fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked repositories and reusable files.
 - Inspect local Python/R environments first. Prefer `conda run -n stereo-skills-py python ...` for scVelo/Scanpy Python scripts and `conda run -n stereo-skills-r Rscript ...` for R scripts. spaTrack requires its own env (`envs/environment-python-spatrack.yml`) because it pins older `numpy/pandas/scipy`. If required packages are missing, stop that step and tell the user exactly which package blocks which script.
 - Keep figure text paper-sized: Arial, readable legends, no legend overlap, and export PDF/300 dpi outputs where applicable.
 - In the final response, state the reused paper, DOI, code repository/source file, and what was changed for the current dataset.

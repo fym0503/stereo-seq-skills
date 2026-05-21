@@ -90,3 +90,29 @@ Reusable success points:
 Environment note:
 
 - `stMLnet-AnalysisCode` is reachable but is not a standard R package install target. If `library(stMLnet)` is unavailable, run the bundled template with `--stmlnet-source /path/to/stMLnet-AnalysisCode/code/function.R` or provide an equivalent source file.
+
+## FlowSig Intercellular Flow
+
+- Paper: `Inferring pattern-driving intercellular flows from single-cell and spatial transcriptomics`
+- DOI: `10.1038/s41592-024-02380-w`
+- Code repositories: `https://github.com/axelalmet/flowsig`, `https://github.com/axelalmet/FlowSigAnalysis_2023`
+- Original files: `src/flowsig/tutorials/mouse_embryo_stereoseq_example_script.py`, `src/flowsig/preprocessing/_spatial_blocking.py`, `src/flowsig/tools/_spatial.py`, `communication_inference/analyse_spatial_communication_in_chen2022_mouse_embryo_E9.5.py`
+
+Reusable success points:
+
+- Use for spatially organized, pattern-driving communication flows rather than simple LR ranking.
+- Keep spatial blocks, flow variables, and target gene programs explicit.
+- Validate directional claims with known biology or perturbation/stage evidence.
+
+## SpaSEG CCI
+
+- Paper: `SpaSEG: unsupervised deep learning for multi-task analysis of spatially resolved transcriptomics`
+- DOI: `10.1186/s13059-025-03697-1`
+- Code repository: `https://github.com/y-bai/SpaSEG`
+- Original files: `downstream/cci/cci.py`, `notebook/CCI/MB_cellChat.ipynb`, `notebook/CCI/Mouse_brain_dotplot_LR_celltype.ipynb`, `notebook/CCI/*heatmap*.ipynb`
+
+Reusable success points:
+
+- Use dotplots/heatmaps for LR-cell type summaries with readable labels.
+- Interpret CCI together with domain and marker evidence.
+- Export LR tables before figure generation.

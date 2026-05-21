@@ -104,3 +104,74 @@ Reusable success points:
 - Keep coordinate columns and spot IDs aligned through Seurat to SingleCellExperiment conversion.
 - Record `q`, `n.PCs`, `n.HVGs`, and MCMC repetition count.
 - Use readable legends and equal-aspect cluster maps.
+
+## Human Cortex Single-Cell Resolution Atlas
+
+- Paper: `Charting the spatial transcriptome of the human cerebral cortex at single-cell resolution`
+- DOI: `10.1038/s41467-025-62793-9`
+- Code repository: `https://github.com/lcy1364/Cortex-Atlas-Code`
+
+Reusable files:
+
+- `src/STEREO/3_domainProcess/2_generatingData.R`: domain input construction.
+- `src/STEREO/3_domainProcess/DeepST_run.py`: DeepST-style spatial domain workflow.
+- `src/STEREO/3_domainProcess/DeepST-main/Benchmark/run_DLPFCs_SpaGCN.py`: benchmark-style spatial domain comparison.
+
+Reusable success points:
+
+- Treat domain discovery and anatomical layer annotation as distinct steps.
+- Use marker validation and deconvolution/QC context before naming domains.
+- Keep region/layer color assignments stable across spatial maps and summaries.
+
+## SpaSEG Domain And Marker Workflows
+
+- Paper: `SpaSEG: unsupervised deep learning for multi-task analysis of spatially resolved transcriptomics`
+- DOI: `10.1186/s13059-025-03697-1`
+- Code repository: `https://github.com/y-bai/SpaSEG`
+
+Reusable files:
+
+- `data_processing/scanpy_processing.py`: AnnData preprocessing before model/domain analysis.
+- `notebook/MultiPlatform/stereoseq_cellbin_marker_gene.ipynb`: Stereo-seq cellbin marker/domain validation.
+- `downstream/plotting/_heatmapplot.py`: domain-marker heatmap plotting.
+
+Reusable success points:
+
+- Export domain labels and marker evidence together.
+- Validate model-derived domains with known marker genes and spatial coherence.
+- Use the notebook patterns as paper-derived templates while adapting all object keys locally.
+
+## PROST Spatial Pattern And Domain Detection
+
+- Paper: `PROST: quantitative identification of spatially variable genes and domain detection in spatial transcriptomics`
+- DOI: `10.1038/s41467-024-44835-w`
+- Code repository: `https://github.com/Tang-Lab-super/PROST`
+
+Reusable files:
+
+- `test/Stereo-seq.ipynb`: Stereo-seq example workflow.
+- `PROST/plot.py`: spatial pattern/domain plotting helpers.
+
+Reusable success points:
+
+- Use spatially variable genes as evidence for domain labels, not only cluster boundaries.
+- Keep SVG/domain outputs auditable with parameter and input-object records.
+- Prefer paper-ready spatial maps with equal aspect ratio and external legends.
+
+## Spatial Alignment And 3D-Aware Domain Methods
+
+- SLAT paper: `Spatial-linked alignment tool (SLAT) for aligning heterogenous slices`, DOI `10.1038/s41467-023-43105-5`, repository `https://github.com/gao-lab/SLAT`
+- STalign benchmark evidence: `Benchmarking clustering, alignment, and integration methods for spatial transcriptomics`, DOI `10.1186/s13059-024-03361-0`, repository `https://github.com/JEFworks-Lab/STalign`
+- SPACEL paper: `SPACEL: deep learning-based characterization of spatial transcriptome architectures`, DOI `10.1038/s41467-023-43220-3`, repository `https://github.com/QuKunLab/SPACEL`
+
+Reusable files:
+
+- `gao-lab/SLAT`: `case/mouse_development/Seurat.ipynb`, `benchmark/analysis/plot_slices.ipynb`, `benchmark/workflow/build_3d.smk`.
+- `JEFworks-Lab/STalign`: `docs/notebooks/*alignment*.ipynb`.
+- `QuKunLab/SPACEL`: `docs/tutorials/Stereo-seq_Scube.ipynb`, `SPACEL/Scube/alignment.py`, `SPACEL/Scube/plot.py`.
+
+Reusable success points:
+
+- Use these as domain/alignment evidence only when the user has multiple slices, cross-platform sections, or atlas alignment needs.
+- Keep transformed coordinates and slice/domain labels as exported tables.
+- Validate alignment-derived domains against markers and tissue landmarks.

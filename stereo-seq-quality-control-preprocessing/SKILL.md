@@ -15,6 +15,7 @@ description: Use when Stereo-seq or STOmics data needs QC, preprocessing, GEM/GE
 
 - Use bundled article-derived scripts in `scripts/` before writing preprocessing code or searching external repositories.
 - Read [source_code.md](references/source_code.md) and match templates by input object, spatial unit, and preprocessing goal. Do not hard-code tissue-to-tool rules.
+- If no curated preprocessing entry fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked repositories and reusable files before external search.
 - Inspect local Python/R environments before running. Prefer `conda run -n stereo-skills-py python ...` for general Python scripts and `conda run -n stereo-skills-r Rscript ...` for R scripts. For StereoPy/GEF scripts that import `stereo`, use `envs/environment-python-stereopy.yml` if `stereo` is not already available. If `stereo`, `Seurat`, `Matrix`, or another required package is missing, stop and tell the user exactly what is missing and which preprocessing step is blocked.
 - Preserve raw count outputs and record filtering thresholds.
 - QC plots should use Arial, readable labels, equal-aspect tissue maps, and legends outside the data where possible.

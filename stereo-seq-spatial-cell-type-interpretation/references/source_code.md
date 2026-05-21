@@ -41,3 +41,39 @@ Reusable success points:
 - Use stable cell-type color ordering across condition panels.
 - Keep legends large enough to read in paper figures.
 - Export both sample-level and condition-level proportions when sample labels are available.
+
+## Human Cortex Spatial Cell Metadata
+
+- Paper: `Charting the spatial transcriptome of the human cerebral cortex at single-cell resolution`
+- DOI: `10.1038/s41467-025-62793-9`
+- Code repository: `https://github.com/lcy1364/Cortex-Atlas-Code`
+
+Reusable files:
+
+- `src/STEREO/2_Deconvolution_and_QC/4_spatialCellMeta.R`: spatial cell metadata and deconvolution interpretation plots.
+- `src/STEREO/4_cellSomaProximity/somafrequentgraph_all.R`: soma/cell proximity summaries.
+- `src/STEREO/4_cellSomaProximity/cellchat.R`: cell proximity and CCI context.
+
+Reusable success points:
+
+- Interpret cell types together with layer/domain context.
+- Keep broad subclass and fine subclass interpretations separate.
+- Use proximity evidence only after validating spatial mapping and coordinates.
+
+## Avian Optic Tectum Cellbin Interpretation
+
+- Paper: `Spatial and single-nucleus transcriptomics decoding the molecular landscape and cellular organization of avian optic tectum`
+- DOI: `10.1016/j.isci.2024.109009`
+- Code repository: `https://github.com/Coleliao/Spatial_OT`
+
+Reusable files:
+
+- `spatial_analysis/fig1BC_spatial_visualization_mannaul_annotation.R`: region/cell-type spatial annotation plots.
+- `spatial_analysis/fig3BCDE_cellbin_clustering.R`: cellbin cluster interpretation.
+- `spatial_analysis/fig3FGH_SGP_cellbin_subclustering.R`: subpopulation spatial interpretation.
+
+Reusable success points:
+
+- Interpret cell types at the same resolution used for mapping.
+- Support anatomical claims with marker genes and spatial coherence.
+- Report cross-species or cross-region label uncertainty explicitly.

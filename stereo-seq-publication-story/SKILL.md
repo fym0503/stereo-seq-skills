@@ -19,6 +19,7 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
 
 - Search local references first. Do not browse for papers or code unless the bundled corpus is insufficient or the user explicitly asks.
 - Start with `scripts/search_paper_stories.py` using the user's tissue, species, condition, stage, biological question, analysis keywords, tool hints, or skill tags. The default search covers all bundled paper digests.
+- When code provenance or reusable scripts are needed, also run `scripts/search_code_repositories.py` against the bundled article/method code registry before considering external search.
 - Read only the top relevant `references/story_templates/papers/Sxxxx.md` and `references/paper_digests/papers/Sxxxx.md` files needed for the task.
 - Treat the bundled material as a paper-derived evidence base, not as proof about the user's dataset. Separate:
   - what the reference paper showed;
@@ -34,21 +35,25 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
 2. Search the local paper-story corpus:
    - `python scripts/search_paper_stories.py --query "mouse brain cortex layer spatial domain cell type" --top 8`
    - `python scripts/search_paper_stories.py --species mouse --tissue brain --skill-tags spatial_domain cell_type_mapping spatial_programs --top 8`
-3. Read the most relevant story templates first. Use paper digests when the figure logic, tool provenance, captions, or code/data URLs are needed.
-4. Extract reusable story components:
+3. Search local code-source evidence when executable or figure-template provenance is needed:
+   - `python scripts/search_code_repositories.py --query "cellbin segmentation histology boundary Stereo-seq" --top 12`
+   - `python scripts/search_code_repositories.py --skill stereo-seq-spatial-domain-discovery --query "mouse embryo domain marker" --top 12`
+4. Read the most relevant story templates first. Use paper digests when the figure logic, tool provenance, captions, or code/data URLs are needed. Use `references/github_code_registry.tsv` and per-skill `references/code_candidates.tsv` only as local source-code navigation, not as a claim that every file was executed.
+5. Extract reusable story components:
    - central question and biological gap;
    - figure order template;
    - minimum evidence chain;
    - analysis modules used by the reference paper;
    - validation requirements and common failure modes.
-5. Convert the pattern into a dataset-specific plan:
+6. Convert the pattern into a dataset-specific plan:
    - candidate scientific questions;
    - analysis modules to run;
    - figure storyboard;
    - expected outputs and decision points;
    - risks, missing metadata, and unsupported claims.
-6. Map planned analysis modules to available local skills. Common pairings include:
+7. Map planned analysis modules to available local skills. Common pairings include:
    - QC/setup: `stereo-seq-quality-control-preprocessing`
+   - cellbin/segmentation/histology: `stereo-seq-cellbin-segmentation`
    - annotation/label transfer: `stereo-seq-cell-type-mapping`
    - domain/layer discovery: `stereo-seq-spatial-domain-discovery`
    - marker/pathway/program analysis: `stereo-seq-spatial-programs`
@@ -58,7 +63,7 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
    - trajectory/time/state transition: `stereo-seq-developmental-trajectory`
    - 3D/serial sections: `stereo-seq-3d-reconstruction`
    - manuscript figures: `stereo-seq-publication-plotting`
-7. Report the provenance of the reused story patterns and explain how they were adapted to the user's data.
+8. Report the provenance of the reused story patterns and code-source templates, then explain how they were adapted to the user's data.
 
 ## Reference Layout
 
@@ -68,6 +73,8 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
 - `references/story_templates/papers/Sxxxx.md`: reusable scientific story templates for individual papers.
 - `references/paper_digests/papers/Sxxxx.md`: paper digests with figure/caption logic, observed methods, code/data URLs, and audit notes.
 - `references/story_template_schema.md`: schema used to interpret story templates.
+- `references/github_code_registry.tsv`: curated local index of article-owned or method-with-example GitHub/code repositories linked to paper ids, DOI, reusable files, and relevant local skills.
+- `scripts/search_code_repositories.py`: searchable interface over the code registry.
 
 ## Output Expectations
 

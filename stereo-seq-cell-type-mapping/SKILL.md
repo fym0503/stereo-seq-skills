@@ -19,6 +19,7 @@ Do not use this skill for downstream biological interpretation of mapped cell ty
 - Before installing packages or creating a new environment, inspect the local Python/R environments. Prefer the existing `stereo-skills-py` and `stereo-skills-r` conda environments when available: `conda run -n stereo-skills-py python ...` or `conda run -n stereo-skills-r Rscript ...`.
 - If a required environment or package is missing, stop that step and tell the user exactly what is missing, which command would install it, and which analysis step is blocked. Do not silently install packages, mutate shared environments, or replace the method with an unrelated workaround unless the user asks you to.
 - Before writing new plotting or analysis code, read [source_code.md](references/source_code.md) and adapt the closest bundled script in `scripts/`. Do not search GitHub/Zenodo first unless no bundled template fits.
+- If no curated entry in [source_code.md](references/source_code.md) fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked repositories and reusable files before external search.
 - If no bundled article-derived script fits the task, state that explicitly and keep any custom code minimal.
 - In the final response, always state which paper/code source was reused, the paper DOI, the code DOI or repository URL, the original file name, and what was changed for the current dataset.
 

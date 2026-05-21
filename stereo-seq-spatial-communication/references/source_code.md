@@ -84,3 +84,59 @@ Reusable script:
 Reusable script:
 
 - `../stereo-seq-cell-cell-interaction/scripts/spider_spatial_lri_template.py`
+
+## FlowSig Intercellular Flow
+
+- Paper: `Inferring pattern-driving intercellular flows from single-cell and spatial transcriptomics`
+- DOI: `10.1038/s41592-024-02380-w`
+- Code repositories: `https://github.com/axelalmet/flowsig`, `https://github.com/axelalmet/FlowSigAnalysis_2023`
+
+Reusable files:
+
+- `src/flowsig/tutorials/mouse_embryo_stereoseq_example.ipynb`: Stereo-seq mouse embryo example.
+- `src/flowsig/tutorials/mouse_embryo_stereoseq_example_script.py`: script version of the example.
+- `src/flowsig/preprocessing/_spatial_blocking.py`: spatial block preprocessing.
+- `src/flowsig/tools/_spatial.py`: spatial flow tools.
+- `communication_inference/analyse_spatial_communication_in_chen2022_mouse_embryo_E9.5.py`: spatial communication analysis from the paper code.
+
+Reusable success points:
+
+- Use when the question asks for communication-driven spatial patterns or directional signal flow, not just LR enrichment.
+- Keep spatial blocks/neighborhoods and inferred flows as exported tables.
+- Validate inferred flows against ligand/receptor expression, target programs, and spatial adjacency.
+
+## SpaSEG CCI Notebooks
+
+- Paper: `SpaSEG: unsupervised deep learning for multi-task analysis of spatially resolved transcriptomics`
+- DOI: `10.1186/s13059-025-03697-1`
+- Code repository: `https://github.com/y-bai/SpaSEG`
+
+Reusable files:
+
+- `downstream/cci/cci.py`: CCI utility code.
+- `notebook/CCI/MB_cellChat.ipynb`: mouse brain CellChat example.
+- `notebook/CCI/Mouse_brain_dotplot_LR_celltype.ipynb`: LR-cell type dotplot example.
+- `notebook/CCI/*heatmap*.ipynb`: LR count and correlation heatmap examples.
+
+Reusable success points:
+
+- Pair LR counts/correlations with cell-type/domain labels.
+- Use heatmaps and dotplots with large, readable labels; avoid a single overloaded network plot.
+- Keep CCI interpretation as a hypothesis unless spatial proximity and expression support are both shown.
+
+## Thor COMMOT Tutorial
+
+- Paper: `Thor: a platform for cell-level investigation of spatial transcriptomics and histology`
+- DOI: `10.1038/s41467-025-62593-1`
+- Code repository: `https://github.com/GuangyuWangLab2021/Thor`
+
+Reusable files:
+
+- `notebooks/tutorial_run_cell_communication_commot.ipynb`: COMMOT-style cell communication tutorial.
+- `src/thor/plotting/spot_overlap.py`, `spot_pie.py`: geometry-aware communication/abundance plots.
+
+Reusable success points:
+
+- Prefer this route when communication is interpreted at cell level with histology or segmented-cell geometry.
+- Show how cells/spots overlap before interpreting sender/receiver signals.
+- Report missing COMMOT/Thor dependencies as blockers.

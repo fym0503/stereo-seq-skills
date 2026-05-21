@@ -14,6 +14,7 @@ description: Use when Stereo-seq or STOmics spatial transcriptomics data needs g
 ## Default Requirements
 
 - Use bundled article-derived scripts in `scripts/` before writing new code or searching external repositories.
+- Read [source_code.md](references/source_code.md) first for curated GRN/regulon templates; if no curated entry fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked repositories and reusable files.
 - Inspect local Python/R environments first. Prefer `conda run -n stereo-skills-py python ...` for pySCENIC/AUCell-style Python scripts and `conda run -n stereo-skills-r Rscript ...` for R scripts. SpaGRN requires its own env (`envs/environment-python-spagrn.yml`) because it pins Python 3.8 and older `numpy/pandas/scanpy`. If a required package or database is missing, stop that step and tell the user exactly what is missing and which GRN step is blocked.
 - For SpaGRN/pySCENIC, require explicit motif ranking database, motif annotation table, and TF list; do not invent those resources.
 - Keep figures paper-ready: Arial, readable labels, non-overlapping legends, equal-aspect spatial plots, vector PDF when possible.

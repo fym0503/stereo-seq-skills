@@ -33,6 +33,7 @@ Restart Codex after installation so the new skills are discovered.
 - `stereo-seq-quality-control-preprocessing`
 - `stereo-seq-publication-plotting`
 - `stereo-seq-publication-story`
+- `stereo-seq-cellbin-segmentation`
 - `stereo-seq-spatial-domain-discovery`
 - `stereo-seq-spatial-programs`
 - `stereo-seq-spatial-cell-type-interpretation`
@@ -50,8 +51,10 @@ The `stereo-seq-publication-story` skill includes bundled local references:
 - 462 objective Stereo-seq paper digests.
 - 50 reusable paper story templates.
 - Search script: `stereo-seq-publication-story/scripts/search_paper_stories.py`.
+- Curated local GitHub/code registry covering article-linked reusable repositories.
+- Code search script: `stereo-seq-publication-story/scripts/search_code_repositories.py`.
 
-The skill uses these local references to help Codex identify similar published Stereo-seq analyses, reuse paper-style figure logic, and report DOI/source provenance when adapting workflows to a new dataset.
+The skill uses these local references to help Codex identify similar published Stereo-seq analyses, reuse paper-style figure logic and code-template provenance, and report DOI/source provenance when adapting workflows to a new dataset.
 
 ## Environment
 

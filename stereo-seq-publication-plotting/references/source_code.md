@@ -54,3 +54,77 @@ Reusable success points:
 - Equal-aspect spatial maps with cluster legends outside the tissue data.
 - Dotplots use explicit group/feature order and readable axis text.
 - Condition split panels use consistent palettes across GF/SPF or related contrasts.
+
+## Human Cortex Single-Cell Resolution Atlas
+
+- Paper: `Charting the spatial transcriptome of the human cerebral cortex at single-cell resolution`
+- DOI: `10.1038/s41467-025-62793-9`
+- Code repository: `https://github.com/lcy1364/Cortex-Atlas-Code`
+
+Reusable files:
+
+- `src/STEREO/2_Deconvolution_and_QC/4_spatialCellMeta.R`: spatial cell metadata maps and deconvolution QC plots.
+- `src/STEREO/3_domainProcess/*`: domain, layer, and marker plots after spatial clustering.
+- `src/STEREO/GEM/stat.R`: GEM/bin summary plots.
+
+Reusable success points:
+
+- Keep cortex-region, layer, and subclass palettes stable across figures.
+- Pair deconvolution/domain plots with marker and QC plots so maps are not visually unsupported.
+- Use figure dimensions large enough for multi-region legends.
+
+## Avian Optic Tectum Spatial Atlas
+
+- Paper: `Spatial and single-nucleus transcriptomics decoding the molecular landscape and cellular organization of avian optic tectum`
+- DOI: `10.1016/j.isci.2024.109009`
+- Code repository: `https://github.com/Coleliao/Spatial_OT`
+
+Reusable files:
+
+- `functions/Visualization.R`: reusable R plotting utilities.
+- `spatial_analysis/fig1BC_spatial_visualization_mannaul_annotation.R`: manual annotation spatial maps.
+- `spatial_analysis/fig2D_vlnplot_selected_deg.R`: marker/DEG violin-style panels.
+- `snRNA_analysis/fig4H_EXN_deg_score_on_bin100Spatial.R`: gene-score spatial maps.
+
+Reusable success points:
+
+- Use spatial maps, DEG/program plots, and annotation panels as a linked figure set.
+- Keep layer/region labels readable and outside dense tissue areas.
+- Separate bin-level and cellbin-level figures so resolution changes are explicit.
+
+## SpaSEG Multi-Task Spatial Analysis
+
+- Paper: `SpaSEG: unsupervised deep learning for multi-task analysis of spatially resolved transcriptomics`
+- DOI: `10.1186/s13059-025-03697-1`
+- Code repository: `https://github.com/y-bai/SpaSEG`
+
+Reusable files:
+
+- `downstream/plotting/_heatmapplot.py`: heatmap panels for markers, domains, and CCI summaries.
+- `downstream/plotting/_svgplot.py`: SVG and spatial program visualization.
+- `notebook/MultiPlatform/stereoseq_cellbin_marker_gene.ipynb`: Stereo-seq cellbin marker plots.
+
+Reusable success points:
+
+- Use one visual grammar across domain, marker, SVG, and CCI panels.
+- Keep legends and heatmap labels large enough for manuscript panels.
+- Use notebook outputs as figure-template evidence, but adapt paths and data objects locally.
+
+## Thor Cell-Level Histology Plots
+
+- Paper: `Thor: a platform for cell-level investigation of spatial transcriptomics and histology`
+- DOI: `10.1038/s41467-025-62593-1`
+- Code repository: `https://github.com/GuangyuWangLab2021/Thor`
+
+Reusable files:
+
+- `src/thor/plotting/boundary.py`: cell-boundary plotting.
+- `src/thor/plotting/spot_overlap.py`: spot/bin overlap with segmented cells.
+- `src/thor/plotting/spot_pie.py`: cell/spot composition pies.
+- `src/thor/plotting/colors.py`: palette utilities.
+
+Reusable success points:
+
+- Show boundary/spot geometry when interpreting cell-level outputs.
+- Avoid placing legends over histology or segmented cell boundaries.
+- Use DEG and annotation plots only after multimodal alignment is inspected.

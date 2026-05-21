@@ -36,3 +36,38 @@ Reusable success points:
 - Keep GRN inference, motif pruning, and AUCell outputs as separate auditable files.
 - Choose top regulons by cluster/domain specificity, not only by global mean activity.
 - Keep spatial maps equal-aspect and legends readable for manuscript figures.
+
+## Wheat Root Atlas Regulons
+
+- Paper: `A single-cell and spatial wheat root atlas with cross-species annotations delineates conserved tissue-specific marker genes and regulators`
+- DOI: `10.1016/j.celrep.2025.115240`
+- Code repository: `https://github.com/VIB-PSB/wheat_root_atlas`
+
+Reusable files:
+
+- `GRN_database/wheat MINI-ex database/01_prepare_TF2fam2mot.R`, `02_prepare_mapping.R`, `03_prepare_GOs.R`: regulon database preparation.
+- `GRN_database/wheat TFs and motifs/*`: TF/motif preparation.
+- `GRN_regulon_analysis/bin/cross_species_regulon_overlap.py`: cross-species regulon overlap.
+
+Reusable success points:
+
+- Require organism-appropriate TF, motif, and gene-motif resources.
+- Separate database preparation from regulon activity analysis.
+- Treat conserved regulators as hypotheses unless motif, expression, and spatial specificity agree.
+
+## ONTraC Paper SCENIC
+
+- Paper: `ONTraC characterizes spatially continuous variations of tissue microenvironment through niche trajectory analysis`
+- DOI: `10.1186/s13059-025-03588-5`
+- Code repository: `https://github.com/gyuanlab/ONTraC_paper`
+
+Reusable files:
+
+- `Stereo_seq_midbrain_data/post_analysis/SCENIC/Python_SCENIC.ipynb`: SCENIC analysis in a Stereo-seq midbrain workflow.
+- `Stereo_seq_midbrain_data/post_analysis/Meta_cell/Meta_cell_based_gene_exp_along_trajectory.ipynb`: regulon/program interpretation along niche trajectory.
+
+Reusable success points:
+
+- Combine regulon activity with trajectory/domain context only after the upstream trajectory is validated.
+- Export regulon activity and specificity tables before plotting.
+- Keep SCENIC resource requirements explicit.

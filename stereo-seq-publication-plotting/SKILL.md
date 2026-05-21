@@ -15,6 +15,7 @@ description: Use when Stereo-seq or STOmics analysis needs paper-quality figures
 
 - Use bundled article-derived scripts in `scripts/` before writing new plotting code or searching external repositories.
 - Read [source_code.md](references/source_code.md) when deciding which template to adapt. Let the current dataset, plot type, tissue geometry, and task similarity guide the choice; do not hard-code tissue-to-tool rules.
+- If no curated plotting entry fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked figure scripts and reusable files before external search.
 - Before running Python or R, inspect the local environment. Prefer `conda run -n stereo-skills-py python ...` for Python plotting scripts and `conda run -n stereo-skills-r Rscript ...` for R plotting scripts. If a required package is missing, stop that plotting step and tell the user which package is missing and which figure is blocked.
 - Use Arial where available. For manuscript panels, keep axis text, legend text, and labels at least 9 pt by default; use 10-11 pt for legend titles, panel titles, and important labels.
 - Export vector PDF plus 300 dpi raster when useful.

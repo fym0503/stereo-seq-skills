@@ -14,6 +14,7 @@ description: Use when Stereo-seq or STOmics serial sections need multi-slice reg
 ## Default Requirements
 
 - Use bundled article-derived scripts in `scripts/` before writing new registration or plotting code.
+- Read [source_code.md](references/source_code.md) first for curated templates; if no curated entry fits, search [code_candidates.tsv](references/code_candidates.tsv) for additional article-linked repositories and reusable files.
 - Inspect local Python/R environments first. Prefer `conda run -n stereo-skills-py python ...` for Python scripts and `conda run -n stereo-skills-r Rscript ...` for R scripts. spatiAlign is configured in `stereo-skills-py`; it can also be isolated with `envs/environment-python-spatialign.yml`. If a dependency is missing, stop that step and report the missing package and blocked script.
 - Use equal-aspect spatial plots, readable Arial text, non-overlapping legends, and export PDF/300 dpi diagnostic figures.
 - In the final response, state the reused paper, DOI, code repository/source file, and what was changed for the current dataset.

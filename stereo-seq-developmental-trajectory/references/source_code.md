@@ -68,3 +68,40 @@ Reusable success points:
 - Keep NN, GNN, and NT output directories separate.
 - Preserve run logs and analysis logs.
 - Treat missing ONTraC CLI as an environment blocker rather than substituting another method.
+
+## Ascidian Endostyle Trajectory And RNA Velocity
+
+- Paper: `Spatially resolved single-cell atlas of ascidian endostyle provides insight into the origin of vertebrate pharyngeal organs`
+- DOI: `10.1126/sciadv.adi9035`
+- Code repository: `https://github.com/lskfs/ascidian-endostyle`
+
+Reusable files:
+
+- `07.RNA_velocity/dynamo_pipe.single.py`: Dynamo RNA velocity workflow.
+- `07.RNA_velocity/pre-velocyto.py`: velocyto preprocessing.
+- `11.trajectory_projection/monocle2.R`: Monocle2 pseudotime.
+- `11.trajectory_projection/trajectory_mapping.py`: trajectory projection.
+- `10.cross-species_comparison/sankeyPlot.R`: cross-species/state Sankey summaries.
+
+Reusable success points:
+
+- Require velocity layers or explicit time/state evidence before claiming direction.
+- Use trajectory projection only when a reference trajectory or region mask is available.
+- Pair pseudotime/velocity plots with spatial maps and marker validation.
+
+## FlowSig Mouse Embryo Stereo-seq
+
+- Paper: `Inferring pattern-driving intercellular flows from single-cell and spatial transcriptomics`
+- DOI: `10.1038/s41592-024-02380-w`
+- Code repositories: `https://github.com/axelalmet/flowsig`, `https://github.com/axelalmet/FlowSigAnalysis_2023`
+
+Reusable files:
+
+- `analysis/analyse_chen22_mouse_embryo_E9.5_spatial_stereoseq.py`: mouse embryo Stereo-seq analysis.
+- `src/flowsig/tutorials/mouse_embryo_stereoseq_example.ipynb`: tutorial workflow.
+
+Reusable success points:
+
+- Use for developmental tissue only when the question links communication flow to spatial patterning.
+- Keep stage and spatial neighborhood definitions explicit.
+- Do not infer developmental direction from a single section unless the user provides temporal evidence.

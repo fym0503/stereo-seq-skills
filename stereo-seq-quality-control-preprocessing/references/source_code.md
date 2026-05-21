@@ -50,3 +50,41 @@ Reusable success points:
 
 - Keep per-sample QC tables aligned to sample/condition labels.
 - Use consistent coordinate orientation before comparing conditions.
+
+## Human Cortex GEM/Cellbin Preparation
+
+- Paper: `Charting the spatial transcriptome of the human cerebral cortex at single-cell resolution`
+- DOI: `10.1038/s41467-025-62793-9`
+- Code repository: `https://github.com/lcy1364/Cortex-Atlas-Code`
+
+Reusable files:
+
+- `src/STEREO/1_cellbin/1_gemToH5ad.py`: GEM-to-h5ad conversion.
+- `src/STEREO/1_cellbin/2_h5adToRDS.R`: h5ad-to-RDS conversion.
+- `src/STEREO/1_cellbin/read_io.py`: IO helper code.
+- `src/STEREO/GEM/1_bin1_to_bin200anndata.py`, `2_h5adToSeurat.R`, `3_tidyData.R`, `stat.R`: bin-level preprocessing/statistics.
+
+Reusable success points:
+
+- Keep bin size and coordinate transforms explicit during GEM/bin conversion.
+- Save both h5ad and RDS-compatible outputs when downstream skills may use Python or R.
+- Run QC/stat plots before deconvolution or domain discovery.
+
+## STCellbin Preprocessing
+
+- Paper: `Generating single-cell gene expression profiles for high-resolution spatial transcriptomics based on cell boundary images`
+- DOI: `10.46471/gigabyte.110`
+- Code repository: `https://github.com/STOmics/STCellbin`
+
+Reusable files:
+
+- `STCellbin.py`: top-level workflow entry.
+- `src/cellbin/contrib/alignment.py`: image/expression alignment.
+- `src/cellbin/contrib/cell_mask.py`: cell mask handling.
+- `src/cellbin/modules/tissue_segmentation.py`: tissue segmentation.
+
+Reusable success points:
+
+- Separate tissue mask, cell mask, alignment, and expression aggregation.
+- Treat missing image/mask/model inputs as blockers.
+- Export cell-level QC tables before downstream cellbin analysis.
