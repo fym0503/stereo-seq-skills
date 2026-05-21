@@ -1,6 +1,6 @@
 ---
 name: stereo-seq-publication-story
-description: Use whenever a Stereo-seq/STOmics/spatial transcriptomics request asks to reuse, cite, report, compare, or learn from real published Stereo-seq papers, paper templates, story templates, article-derived workflows, manuscript figure logic, publication story, scientific story, paper experience, provenance, DOI, code/data source, or "which paper/template was reused". Also use for Chinese requests mentioning 真实论文, 文章模板, 论文模板, story templates, 论文故事线, 复用论文经验, 复用了哪些论文, 原始论文 DOI, 代码/数据来源, 发育图谱, 器官发生, mouse embryo, organogenesis, developmental atlas, or when designing a paper-style analysis plan from a new Stereo-seq dataset. This skill searches bundled paper digests and reusable story templates before mapping to local Stereo-seq analysis/plotting skills.
+description: Use whenever a Stereo-seq/STOmics/spatial transcriptomics request asks to reuse, cite, report, compare, or learn from real published Stereo-seq papers, paper templates, article-derived workflows, manuscript figure logic, publication story, scientific story, paper experience, provenance, DOI, code/data source, or "which paper/template was reused". Also use for Chinese requests mentioning 真实论文, 文章模板, 论文模板, story templates, 论文故事线, 复用论文经验, 复用了哪些论文, 原始论文 DOI, 代码/数据来源, 发育图谱, 器官发生, mouse embryo, organogenesis, developmental atlas, or when designing a paper-style analysis plan from a new Stereo-seq dataset. This skill searches bundled unified paper profiles before mapping to local Stereo-seq analysis/plotting skills.
 ---
 
 # Stereo-seq Publication Story
@@ -18,9 +18,9 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
 ## Default Requirements
 
 - Search local references first. Do not browse for papers or code unless the bundled corpus is insufficient or the user explicitly asks.
-- Start with `scripts/search_paper_stories.py` using the user's tissue, species, condition, stage, biological question, analysis keywords, tool hints, or skill tags. The default search covers all bundled paper digests.
+- Start with `scripts/search_paper_stories.py` using the user's tissue, species, condition, stage, biological question, analysis keywords, tool hints, or skill tags. The default search covers all bundled unified paper profiles.
 - When code provenance or reusable scripts are needed, also run `scripts/search_code_repositories.py` against the bundled article/method code registry before considering external search.
-- Read only the top relevant `references/story_templates/papers/Sxxxx.md` and `references/paper_digests/papers/Sxxxx.md` files needed for the task.
+- Read only the top relevant `references/paper_profiles/papers/Sxxxx.md` files needed for the task.
 - Treat the bundled material as a paper-derived evidence base, not as proof about the user's dataset. Separate:
   - what the reference paper showed;
   - what the user's dataset has already demonstrated;
@@ -38,7 +38,7 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
 3. Search local code-source evidence when executable or figure-template provenance is needed:
    - `python scripts/search_code_repositories.py --query "cellbin segmentation histology boundary Stereo-seq" --top 12`
    - `python scripts/search_code_repositories.py --skill stereo-seq-spatial-domain-discovery --query "mouse embryo domain marker" --top 12`
-4. Read the most relevant story templates first. Use paper digests when the figure logic, tool provenance, captions, or code/data URLs are needed. Use `references/github_code_registry.tsv` and per-skill `references/code_candidates.tsv` only as local source-code navigation, not as a claim that every file was executed.
+4. Read the most relevant unified paper profiles first. Use `references/github_code_registry.tsv` and per-skill `references/code_candidates.tsv` only as local source-code navigation, not as a claim that every file was executed.
 5. Extract reusable story components:
    - central question and biological gap;
    - figure order template;
@@ -67,11 +67,8 @@ Use this skill to turn a new Stereo-seq analysis request into a paper-like scien
 
 ## Reference Layout
 
-- `references/paper_digest_all_index.tsv`: searchable index of all bundled paper digests with tissue, tools, skill tags, and digest paths.
-- `references/paper_digest_50_index.tsv`: curated 50-paper subset used for the first story-template pass.
-- `references/story_template_50_index.tsv`: searchable index of 50 reusable paper-story templates.
-- `references/story_templates/papers/Sxxxx.md`: reusable scientific story templates for individual papers.
-- `references/paper_digests/papers/Sxxxx.md`: paper digests with figure/caption logic, observed methods, code/data URLs, and audit notes.
+- `references/paper_profile_all_index.tsv`: searchable index of all bundled unified paper profiles with tissue, tools, skill tags, story/reuse fields, and profile paths.
+- `references/paper_profiles/papers/Sxxxx.md`: one unified profile per paper, combining objective corpus evidence and story/reuse cues.
 - `references/story_template_schema.md`: schema used to interpret story templates.
 - `references/github_code_registry.tsv`: curated local index of article-owned or method-with-example GitHub/code repositories linked to paper ids, DOI, reusable files, and relevant local skills.
 - `scripts/search_code_repositories.py`: searchable interface over the code registry.
@@ -90,6 +87,6 @@ For a story-design or analysis-planning request, produce:
 For a completed analysis report, include:
 
 - The analyses performed and files generated.
-- Which paper-derived story templates or digests were reused.
+- Which paper-derived profiles were reused.
 - Original paper DOI and code/data source as available in the digest.
 - What was changed to adapt the template to the user's dataset.

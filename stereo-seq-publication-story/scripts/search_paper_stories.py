@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Search bundled Stereo-seq paper-story templates and paper digests."""
+"""Search bundled unified Stereo-seq paper profiles."""
 
 from __future__ import annotations
 
@@ -36,24 +36,11 @@ def contains_term(haystack: str, term: str) -> bool:
     return term.lower() in (haystack or "").lower()
 
 
-def merged_records(ref_dir: Path, digest_index: str) -> list[dict[str, str]]:
-    digest_path = ref_dir / digest_index
-    if not digest_path.exists():
-        raise FileNotFoundError(f"Missing digest index: {digest_path}")
-    digest_rows = read_tsv(digest_path)
-    story_rows = read_tsv(ref_dir / "story_template_50_index.tsv")
-    story_by_id = {row["paper_id"]: row for row in story_rows}
-
-    records: list[dict[str, str]] = []
-    for row in digest_rows:
-        record = dict(row)
-        story = story_by_id.get(row["paper_id"], {})
-        for key, value in story.items():
-            if key in {"selection_rank", "doi", "year", "journal", "title", "paper_id"}:
-                continue
-            record[key] = value
-        records.append(record)
-    return records
+def profile_records(ref_dir: Path, profile_index: str) -> list[dict[str, str]]:
+    index_path = ref_dir / profile_index
+    if not index_path.exists():
+        raise FileNotFoundError(f"Missing paper profile index: {index_path}")
+    return read_tsv(index_path)
 
 
 def score_record(record: dict[str, str], args: argparse.Namespace) -> float:
@@ -129,16 +116,14 @@ def passes_filters(record: dict[str, str], args: argparse.Namespace) -> bool:
 
 def relative_path(record: dict[str, str], key: str) -> str:
     value = record.get(key, "")
-    if key == "digest_path" and value:
-        return "references/" + value
-    if key == "template_path" and value:
+    if key == "profile_path" and value:
         return "references/" + value
     return value
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Search local Stereo-seq publication story templates and paper digests."
+        description="Search local unified Stereo-seq paper profiles."
     )
     parser.add_argument("--query", default="", help="Free-text search query.")
     parser.add_argument("--paper-id", help="Exact paper id, such as S0097.")
@@ -149,15 +134,15 @@ def main() -> int:
     parser.add_argument("--archetype", nargs="*", help="Required story archetype terms.")
     parser.add_argument("--top", type=int, default=8, help="Number of records to show.")
     parser.add_argument(
-        "--digest-index",
-        default="paper_digest_all_index.tsv",
-        help="Digest index in references/. Defaults to the all-paper index.",
+        "--profile-index",
+        default="paper_profile_all_index.tsv",
+        help="Unified paper profile index in references/. Defaults to the all-paper index.",
     )
     args = parser.parse_args()
 
     script_dir = Path(__file__).resolve().parent
     ref_dir = script_dir.parent / "references"
-    records = merged_records(ref_dir, args.digest_index)
+    records = profile_records(ref_dir, args.profile_index)
 
     scored = [
         (score_record(record, args), record)
@@ -180,8 +165,7 @@ def main() -> int:
         "final_claim_type",
         "skill_tags",
         "tools_observed",
-        "story_template",
-        "paper_digest",
+        "paper_profile",
     ]
     # Use print instead of pandas so the script works in a minimal Python env.
     print("\t".join(fields))
@@ -200,8 +184,7 @@ def main() -> int:
             "final_claim_type": record.get("final_claim_type", ""),
             "skill_tags": record.get("skill_tags", ""),
             "tools_observed": record.get("tools_observed", ""),
-            "story_template": relative_path(record, "template_path"),
-            "paper_digest": relative_path(record, "digest_path"),
+            "paper_profile": relative_path(record, "profile_path"),
         }
         print("\t".join(row[field].replace("\t", " ") for field in fields))
     return 0
